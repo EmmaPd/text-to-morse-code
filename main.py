@@ -13,7 +13,10 @@ split = list(message)
 morse_code_ch_list = []
 
 for letter in list(message):
-    morse_code_ch_list.append(MORSE_CODE_DICT[letter])
+    try:
+        morse_code_ch_list.append(MORSE_CODE_DICT[letter])
+    except KeyError:
+        morse_code_ch_list.append(letter)
 
 ciphered_message = "".join(morse_code_ch_list)
 
